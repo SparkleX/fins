@@ -1,0 +1,10 @@
+type BmoOJDT {
+    Id: Int!
+    Memo: String
+    JDT1: [BmoJDT1]
+}
+
+type BmoJDT1 {
+    Id: Int!
+    AccountId: Int
+}

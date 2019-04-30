@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<table version="12" xmlns="http://www.sap.com/schemas/BusinessOne/ResourceTools/Table">
+	<id>OACT</id>
+	<description>G/L Accounts</description>
+	<view_type>MasterData</view_type>
+	<domain>User</domain>
+	<info_category>Finance</info_category>
+	<column>
+		<id>Id</id>
+		<source_code_name>ACCOUNT_CODE</source_code_name>
+		<description>Id</description>
+		<field_type>110</field_type>
+		<db_type>Identity</db_type>
+		<db_size>15</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>15</edit_size>
+	</column>
+	<column>
+		<id>AcctCode</id>
+		<source_code_name>ACCOUNT_CODE</source_code_name>
+		<description>Account Code</description>
+		<field_type>110</field_type>
+		<db_type>AlphaNumeric</db_type>
+		<db_size>15</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>15</edit_size>
+	</column>
+	<column>
+		<id>AcctName</id>
+		<source_code_name>ACCOUNT_NAME</source_code_name>
+		<description>Account Name</description>
+		<field_type>114</field_type>
+		<db_type>AlphaNumeric</db_type>
+		<db_size>100</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>100</edit_size>
+	</column>
+	<column>
+		<id>CurrTotal</id>
+		<source_code_name>CURRENT_BALANCE</source_code_name>
+		<description>Current Balance</description>
+		<field_type>112</field_type>
+		<db_type>Float</db_type>
+		<db_size>20</db_size>
+		<edit_type>Sum</edit_type>
+		<edit_size>20</edit_size>
+	</column>
+	<column>
+		<id>FatherNum</id>
+		<source_code_name>FATH_NUM</source_code_name>
+		<description>Parent Account Key</description>
+		<db_type>AlphaNumeric</db_type>
+		<db_size>15</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>15</edit_size>
+	</column>
+</table>

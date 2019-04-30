@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<table version="12" xmlns="http://www.sap.com/schemas/BusinessOne/ResourceTools/Table">
+	<id>OJDT</id>
+	<description>Journal Entry</description>
+	<view_type>Document</view_type>
+	<domain>User</domain>
+	<info_category>Finance</info_category>
+	<array_table>JDT1</array_table>
+	<column>
+		<id>Id</id>
+		<source_code_name>JDT_NUM</source_code_name>
+		<description>Transaction Number</description>
+		<field_type>100</field_type>
+		<db_type>Identity</db_type>
+		<db_size>11</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>11</edit_size>
+	</column>
+	<column>
+		<id>RefDate</id>
+		<source_code_name>REF_DATE</source_code_name>
+		<description>Posting Date</description>
+		<field_type>3</field_type>
+		<db_type>Date</db_type>
+		<db_size>8</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>8</edit_size>
+	</column>
+	<column>
+		<id>Memo</id>
+		<source_code_name>MEMO</source_code_name>
+		<description>Remarks</description>
+		<field_type>5</field_type>
+		<db_type>AlphaNumeric</db_type>
+		<db_size>50</db_size>
+		<edit_type>None</edit_type>
+		<edit_size>50</edit_size>
+	</column>
+	<column>
+		<id>LocTotal</id>
+		<source_code_name>LOC_TOTAL</source_code_name>
+		<description>Total in Local Currency</description>
+		<field_type>9</field_type>
+		<db_type>Float</db_type>
+		<db_size>20</db_size>
+		<edit_type>Sum</edit_type>
+		<edit_size>20</edit_size>
+	</column>
+	<column>
+		<id>Order</id>
+		<source_code_name>LOC_TOTAL</source_code_name>
+		<description>Total in Local Currency</description>
+		<field_type>9</field_type>
+		<db_type>Float</db_type>
+		<db_size>20</db_size>
+		<edit_type>Sum</edit_type>
+		<edit_size>20</edit_size>
+	</column>
+</table>

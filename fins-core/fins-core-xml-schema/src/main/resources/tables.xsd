@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sap.com/schemas/BusinessOne/ResourceTools/Table" 
+xmlns="http://www.sap.com/schemas/BusinessOne/ResourceTools/Table"
+ elementFormDefault="qualified">
+ 
+	<xs:element name="table">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="view_type" type="view_type" />
+				<xs:element name="domain" type="domain" />
+				<xs:element name="virtual" type="xs:string"  minOccurs="0" />
+				<xs:element name="info_category" type="xs:string" />
+				<xs:element name="parent_table" type="xs:string"  minOccurs="0"/>
+				<xs:element name="array_table" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="column" type="column" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="key" type="key" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:int" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="column">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="source_code_name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="invisible" type="xs:string" minOccurs="0" />
+			<xs:element name="field_type" type="xs:int" minOccurs="0"/>
+			<xs:element name="db_type" type="db_type" />
+			<xs:element name="db_size" type="xs:int" />
+			<xs:element name="link_to" type="xs:string" minOccurs="0" />
+			<xs:element name="edit_type" type="xs:string" />
+			<xs:element name="edit_size" type="xs:int" />
+			<xs:element name="default_value" type="xs:string" minOccurs="0"/>
+			<xs:element name="valid_value" type="valid_value" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="valid_value">
+		<xs:sequence>
+			<xs:element name="value" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="key">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="unique" type="xs:string"/>
+			<xs:element name="column" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+    <xs:simpleType name="db_type">
+        <xs:restriction base="xs:string">
+			<xs:enumeration value="Identity"/>
+            <xs:enumeration value="AlphaNumeric"/>
+            <xs:enumeration value="Float"/>
+            <xs:enumeration value="Integer"/>
+            <xs:enumeration value="Date"/>
+            <xs:enumeration value="Text"/>
+        </xs:restriction>
+    </xs:simpleType>	
+        <xs:simpleType name="domain">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="System"/>
+            <xs:enumeration value="User"/>
+
+		</xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="view_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LogFile"/>
+            <xs:enumeration value="Document"/>
+            <xs:enumeration value="Invisible"/>
+			<xs:enumeration value="DocumentLine"/>
+			<xs:enumeration value="MasterData"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>
